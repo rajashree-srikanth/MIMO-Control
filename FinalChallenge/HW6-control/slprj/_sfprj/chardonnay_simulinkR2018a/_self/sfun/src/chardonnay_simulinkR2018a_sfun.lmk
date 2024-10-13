@@ -1,0 +1,32 @@
+CC     = "C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"chardonnay_simulinkR2018a_sfun.obj"\
+	"c2_chardonnay_simulinkR2018a.obj"\
+	"chardonnay_simulinkR2018a_sfun_registry.obj"\
+	"half_type.obj"\
+	"lccstub.obj"\
+	"c_mexapi_version.obj"\
+
+INCLUDE_PATH= -I"C:\Other_Files\MATLAB2022a\R2022a\extern\include"  -I"C:\Other_Files\MATLAB2022a\R2022a\simulink\include"  -I"C:\Other_Files\MATLAB2022a\R2022a\simulink\include\sf_runtime"  -I"C:\Other_Files\MATLAB2022a\R2022a\stateflow\c\mex\include"  -I"C:\Other_Files\MATLAB2022a\R2022a\rtw\c\src"  -I"C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src"  -I"C:\other_files\onedrive - isae-supaero\documents\college_things2\MAE2\mimo_control\finalchallenge\hw6-control\be8-control\slprj\_sfprj\chardonnay_simulinkr2018a\_self\sfun\src"  -I"C:\other_files\onedrive - isae-supaero\documents\college_things2\MAE2\mimo_control\finalchallenge\hw6-control\be8-control"  -I"C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\include64" 
+ 
+
+chardonnay_simulinkR2018a_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o chardonnay_simulinkR2018a_sfun.mexw64 @chardonnay_simulinkR2018a_sfun.lmko
+chardonnay_simulinkR2018a_sfun.obj :	"C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\chardonnay_simulinkR2018a_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\chardonnay_simulinkR2018a_sfun.c"
+c2_chardonnay_simulinkR2018a.obj :	"C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\c2_chardonnay_simulinkR2018a.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\c2_chardonnay_simulinkR2018a.c"
+chardonnay_simulinkR2018a_sfun_registry.obj :	"C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\chardonnay_simulinkR2018a_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\chardonnay_simulinkR2018a_sfun_registry.c"
+half_type.obj :	"C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\half_type.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Other_Files\OneDrive - ISAE-SUPAERO\Documents\College_Things2\MAE2\MIMO_Control\FinalChallenge\HW6-control\be8-control\slprj\_sfprj\chardonnay_simulinkR2018a\_self\sfun\src\half_type.c"
+lccstub.obj :	"C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Other_Files\MATLAB2022a\R2022a\sys\lcc64\lcc64\mex\lccstub.c"
+c_mexapi_version.obj :	"C:\Other_Files\MATLAB2022a\R2022a\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Other_Files\MATLAB2022a\R2022a\extern\version\c_mexapi_version.c"
